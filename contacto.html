@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - MISO BEAUTY</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="estilo.css">
+    <style>
+        /* --- ESTILO GENERAL IGUAL AL RESTO DE PÁGINAS --- */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            background-color: #fff5f7;
+            color: #555;
+        }
+
+        header {
+            background-color: #f7c8d8;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 3px solid #f2a7b6;
+        }
+
+        header h1 {
+            margin: 0;
+            color: #e85b81;
+            font-size: 2em;
+            letter-spacing: 2px;
+        }
+
+        nav a {
+            color: #555;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #e85b81;
+        }
+
+        /* --- SECCIÓN CONTACTO --- */
+        .Contacto {
+            max-width: 600px;
+            margin: 60px auto;
+            background-color: #fff;
+            padding: 40px 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(232, 91, 129, 0.25);
+            text-align: center;
+        }
+
+        .Contacto h2 {
+            color: #e85b81;
+            margin-bottom: 30px;
+            font-size: 2em;
+        }
+
+        .FORMULARIO {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .FORMULARIO label {
+            font-weight: bold;
+            text-align: left;
+            color: #555;
+        }
+
+        .FORMULARIO input,
+        .FORMULARIO textarea {
+            padding: 10px;
+            border: 1px solid #f2a7b6;
+            border-radius: 8px;
+            outline: none;
+            font-family: inherit;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .FORMULARIO input:focus,
+        .FORMULARIO textarea:focus {
+            border-color: #e85b81;
+            box-shadow: 0 0 6px rgba(232, 91, 129, 0.4);
+        }
+
+        button {
+            background-color: #e85b81;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #f2a7b6;
+            transform: scale(1.03);
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #f7c8d8;
+            color: #555;
+            border-top: 2px solid #f2a7b6;
+            margin-top: 50px;
+        }
+
+        .social-icons a {
+            color: #e85b81;
+            margin: 0 10px;
+            font-size: 1.2em;
+            transition: color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: #f2a7b6;
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 600px) {
+            .Contacto {
+                width: 90%;
+                padding: 25px;
+            }
+
+            .FORMULARIO input,
+            .FORMULARIO textarea {
+                font-size: 0.95em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>MISO BEAUTY</h1>
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="descuentos.html">Descuentos</a>
+            <a href="nosotros.html">Nosotros</a>
+            <a href="contacto.html">Contacto</a>
+        </nav>
+    </header>
+
+    <section class="Contacto"> 
+        <h2>CONTACTAR</h2>
+        <form class="FORMULARIO">
+            <label for="NOMBRE">NOMBRE:</label>
+            <input type="text" id="NOMBRE" placeholder="Tu nombre" required>
+            
+            <label for="email">CORREO:</label>
+            <input type="email" id="email" placeholder="Tu correo electrónico" required>
+            
+            <label for="MENSAJE">MENSAJE:</label>
+            <textarea id="MENSAJE" rows="5" placeholder="Escribí tu mensaje"></textarea>
+
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+
+    <footer>
+        &copy; Creado por Sofía Guzmán y Mia Fernandez | Todos los derechos reservados
+        <div class="social-icons">
+            <a href=""><i class="fab fa-facebook-f"></i></a>
+            <a href=""><i class="fab fa-instagram"></i></a>
+            <a href=""><i class="fab fa-tiktok"></i></a>
+        </div>
+    </footer>
+</body>
+</html>

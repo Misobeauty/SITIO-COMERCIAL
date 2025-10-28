@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MISO BEAUTY</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="estilo.css">
+    <style>
+        /* --- ESTILOS IGUALES A INICIO --- */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            background-color: #fff5f7;
+            color: #555;
+        }
+
+        header {
+            background-color: #f7c8d8;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 3px solid #f2a7b6;
+        }
+
+        header h1 {
+            margin: 0;
+            color: #e85b81;
+            font-size: 2em;
+            letter-spacing: 2px;
+        }
+
+        nav a {
+            color: #555;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #e85b81;
+        }
+
+        /* --- SECCIÓN DE DESCUENTOS --- */
+        .descuentos {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .descuentos h2 {
+            color: #e85b81;
+            margin-bottom: 30px;
+            font-size: 2em;
+        }
+
+        .cards-descuento {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px;
+            margin: 20px;
+        }
+
+        .card {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 15px;
+            width: 250px;
+            text-align: center;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(232, 91, 129, 0.2);
+        }
+
+        .card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .card h3 {
+            color: #e85b81;
+        }
+
+        .card-descripcion p {
+            margin: 5px 0;
+        }
+
+        .precio-anterior {
+            text-decoration: line-through;
+            color: #999;
+        }
+
+        .precio-descuento {
+            color: #e85b81;
+            font-weight: bold;
+        }
+
+        .card button {
+            background-color: #e85b81;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .card button:hover {
+            background-color: #f2a7b6;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #f7c8d8;
+            color: #555;
+            border-top: 2px solid #f2a7b6;
+        }
+
+        /* --- CARRITO --- */
+        #carrito-container {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #fff;
+            border: 2px solid #f2a7b6;
+            border-radius: 12px;
+            padding: 15px;
+            width: 300px;
+            display: none;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            z-index: 1000;
+        }
+
+        #carrito-container h2 {
+            text-align: center;
+            color: #e85b81;
+        }
+
+        #carrito-items {
+            max-height: 200px;
+            overflow-y: auto;
+        }
+
+        .carrito-item {
+            display: flex;
+            justify-content: space-between;
+            margin: 6px 0;
+            border-bottom: 1px solid #f7c8d8;
+            padding-bottom: 5px;
+        }
+
+        #abrir-carrito {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #e85b81;
+            color: white;
+            border: none;
+            padding: 12px 15px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 20px;
+            z-index: 1001;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+        }
+
+        #abrir-carrito:hover {
+            background-color: #f2a7b6;
+        }
+
+        #vaciar-carrito {
+            background-color: #f2a7b6;
+            color: white;
+            border: none;
+            padding: 8px;
+            border-radius: 5px;
+            width: 100%;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #vaciar-carrito:hover {
+            background-color: #e85b81;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>MISO BEAUTY</h1>
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="descuentos.html">Descuentos</a>
+            <a href="nosotros.html">Nosotros</a>
+            <a href="contacto.html">Contacto</a>
+        </nav>
+    </header>
+
+    <!-- Botón flotante para abrir carrito -->
+    <button id="abrir-carrito"><i class="fa fa-shopping-cart"></i></button>
+
+    <!-- Carrito -->
+    <div id="carrito-container">
+        <h2>Tu carrito</h2>
+        <div id="carrito-items"></div>
+        <hr>
+        <p><strong>Total:</strong> <span id="carrito-total">$0</span></p>
+        <button id="vaciar-carrito">Vaciar carrito</button>
+    </div>
+
+    <section class="descuentos">
+        <h2>Descuentos Especiales</h2>
+        <div class="cards-descuento">
+            <div class="card">
+                <img src="./img/Colorete.jpg" alt="Blush">
+                <div class="card-titulo">
+                    <h3>BLUSH</h3>
+                </div>
+                <div class="card-descripcion">
+                    <p class="precio-anterior">$80.000</p>
+                    <p class="precio-descuento">$64.000</p>
+                    <button class="btn-comprar">Comprar</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="./img/corrector.avif" alt="Corrector">
+                <div class="card-titulo">
+                    <h3>CORRECTOR</h3>
+                </div>
+                <div class="card-descripcion">
+                    <p class="precio-anterior">$92.000</p>
+                    <p class="precio-descuento">$73.600</p>
+                    <button class="btn-comprar">Comprar</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="./img/rimel.jpg" alt="Máscara de Pestañas">
+                <div class="card-titulo">
+                    <h3>MÁSCARA DE PESTAÑAS</h3>
+                </div>
+                <div class="card-descripcion">
+                    <p class="precio-anterior">$40.000</p>
+                    <p class="precio-descuento">$32.000</p>
+                    <button class="btn-comprar">Comprar</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        &copy; Creado por Sofía Guzmán y Mia Fernandez | Todos los derechos reservados
+        <div class="social-icons">
+            <a href=""><i class="fab fa-facebook-f"></i></a>
+            <a href=""><i class="fab fa-instagram"></i></a>
+            <a href=""><i class="fab fa-tiktok"></i></a>
+        </div>
+    </footer>
+
+    <script>
+        const botonesComprar = document.querySelectorAll(".btn-comprar");
+        const carritoContainer = document.getElementById("carrito-container");
+        const abrirCarrito = document.getElementById("abrir-carrito");
+        const carritoItems = document.getElementById("carrito-items");
+        const carritoTotal = document.getElementById("carrito-total");
+        const vaciarCarrito = document.getElementById("vaciar-carrito");
+
+        let carrito = [];
+
+        botonesComprar.forEach(boton => {
+            boton.addEventListener("click", e => {
+                const card = e.target.closest(".card");
+                const nombre = card.querySelector("h3").textContent;
+                const precioTexto = card.querySelector(".precio-descuento").textContent;
+                const precio = parseInt(precioTexto.replace("$","").replace(".",""));
+                agregarAlCarrito(nombre, precio);
+            });
+        });
+
+        function agregarAlCarrito(nombre, precio) {
+            const producto = carrito.find(p => p.nombre === nombre);
+            if (producto) {
+                producto.cantidad++;
+            } else {
+                carrito.push({ nombre, precio, cantidad: 1 });
+            }
+            actualizarCarrito();
+        }
+
+        function actualizarCarrito() {
+            carritoItems.innerHTML = "";
+            let total = 0;
+            carrito.forEach(item => {
+                total += item.precio * item.cantidad;
+                const div = document.createElement("div");
+                div.classList.add("carrito-item");
+                div.innerHTML = `
+                    <span>${item.nombre} x${item.cantidad}</span>
+                    <span>$${item.precio * item.cantidad}</span>
+                `;
+                carritoItems.appendChild(div);
+            });
+            carritoTotal.textContent = `$${total}`;
+        }
+
+        abrirCarrito.addEventListener("click", () => {
+            carritoContainer.style.display = carritoContainer.style.display === "none" ? "block" : "none";
+        });
+
+        vaciarCarrito.addEventListener("click", () => {
+            carrito = [];
+            actualizarCarrito();
+        });
+    </script>
+</body>
+</html>

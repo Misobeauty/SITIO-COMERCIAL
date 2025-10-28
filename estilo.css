@@ -1,0 +1,379 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap');
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: "EB Garamond", serif;
+
+
+}
+header{
+    display: flex;
+    align-items:last baseline ;
+    justify-content: center;
+    background-color: rgb(0, 0, 0);
+    padding: 25px;
+} 
+header h1{
+ color: rgb(255, 255, 255);
+ font-size: 30px;
+}
+header nav a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-size: 20px;
+    padding: 20px;
+
+}
+header nav a:hover{
+color: blanchedalmond;
+text-decoration:underline;
+font-size: 35px;
+transition: all 0.3s ease-in-out;
+}
+
+
+
+.card{
+    margin: 20px;
+    padding: 20px;
+    width: 400px;
+    height: auto;
+    border: 1px solid rgb(99, 99, 99);
+    border-radius: 20px;
+    box-shadow: 2px 2px 4px gray;
+}
+.card img{
+    width: 100%
+}
+.card-titulo{
+    text-align: center;
+
+}
+.card-descripcion{
+    text-align: center;
+    
+}
+.card-descripcion button {
+    padding: 5px;
+    background-color: rgb(202, 197, 201);
+
+} 
+.card-descripcion button:hover{
+    padding: 10px;
+    background-color: black;
+    transition: all 0.3s ease-in-out;
+    color: rgb(245, 129, 206);
+    cursor: pointer;
+}
+section{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+/* --- Estilos responsive --- */
+section {
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Asegura que las tarjetas se adapten */
+.card {
+    width: 100%;
+    max-width: 400px;
+    flex: 1 1 300px;
+}
+
+/* Responsive para pantallas pequeñas */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    header h1 {
+        font-size: 24px;
+    }
+
+    header nav {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding-top: 10px;
+    }
+
+    header nav a {
+        font-size: 18px;
+        padding: 10px;
+    }
+
+    header nav a:hover {
+        font-size: 22px;
+    }
+
+    section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 90%;
+    }
+}
+footer{
+    text-align: center;
+    padding: 10px;
+    background-color: black;
+    color: white;
+    font-size: 14px;
+}
+.fab:hover{
+    color: fuchsia;
+    transition: all 0,3s easy ease-in-out;
+}
+/* Estilos generales */
+body {
+  background: linear-gradient(135deg, #ffffff, #ffffff);
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* formulario.css */
+
+/* Estilo general del contenedor del formulario */
+.Contacto {
+    width: 100%;
+    max-width: 500px;
+    padding: 30px;
+    margin: 40px auto;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(225, 117, 216, 0.1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
+}
+
+/* Estilos del formulario */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+}
+
+/* Etiquetas de los campos */
+form label {
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+/* Entradas de texto y área de texto */
+form input,
+form textarea {
+    width: 100%;
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    box-sizing: border-box;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+/* Efecto al enfocar un input o textarea */
+form input:focus,
+form textarea:focus {
+    border-color: #dd4ae2;
+    box-shadow: 0 0 5px rgba(206, 60, 174, 0.468);
+    outline: none;
+}
+
+/* Estilo del botón de enviar */
+form button {
+    padding: 12px 20px;
+    background-color: #e24a96;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* Hover en el botón */
+form button:hover {
+    background-color: #7d195f;
+}
+
+/* Adaptabilidad para pantallas pequeñas */
+@media (max-width: 600px) {
+    .Contacto {
+        margin: 20px;
+        padding: 20px;
+    }
+}
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Tipografía */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    background-color: #fffdfd;
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    background-color: #000000;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+header h1 {
+    color: #ffffff;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #d63384;
+}
+
+/* Sección Nosotros */
+.nosotros {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fff0f5;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.nosotros h2 {
+    text-align: center;
+    color: #d63384;
+    margin-bottom: 30px;
+    font-size: 2rem;
+}
+
+.contenido-nosotros {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 30px;
+}
+
+.contenido-nosotros img {
+    flex: 1;
+    max-width: 400px;
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.contenido-nosotros .texto {
+    flex: 2;
+    font-size: 1.1rem;
+}
+
+.contenido-nosotros .texto p {
+    margin-bottom: 15px;
+}
+
+/* Footer */
+footer {
+    background-color: #f8e1f4;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 50px;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.ubicacion {
+    max-width: 1100px;
+    margin: 40px auto 60px;
+    padding: 20px;
+    background-color: #f9f0fa;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(214, 51, 132, 0.1);
+    text-align: center;
+}
+
+.ubicacion h2 {
+    color: #d63384;
+    margin-bottom: 15px;
+}
+
+.ubicacion address {
+    font-style: normal;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.mapa iframe {
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+.descuentos {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 20px 10px 40px;
+    text-align: center;
+}
+
+.descuentos h2 {
+    color: #d63384; /* Igual color rosa que usás */
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+.cards-descuento {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.precio-anterior {
+    text-decoration: line-through;
+    color: #999;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.precio-descuento {
+    color: #d63384;
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+.carrito-icono {
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    cursor: pointer;
+    color: white;
+    font-size: 24px;
+}
+
