@@ -377,3 +377,113 @@ footer {
     font-size: 24px;
 }
 
+/* ==== CARRITO DE COMPRAS ==== */
+#carrito-container {
+    position: fixed;
+    top: 90px;
+    right: 30px;
+    background: #ffffff;
+    border: 2px solid #d63384;
+    border-radius: 16px;
+    padding: 20px;
+    width: 320px;
+    display: none;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+    z-index: 1000;
+    animation: fadeIn 0.3s ease-in-out;
+    font-family: "EB Garamond", serif;
+}
+
+#carrito-container h2 {
+    text-align: center;
+    color: #d63384;
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #f8e1f4;
+    padding-bottom: 10px;
+}
+
+#carrito-items {
+    max-height: 200px;
+    overflow-y: auto;
+    margin-bottom: 15px;
+}
+
+.carrito-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff0f5;
+    border-radius: 10px;
+    padding: 8px 10px;
+    margin-bottom: 8px;
+    font-size: 1rem;
+    color: #333;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+#carrito-total {
+    font-weight: bold;
+    color: #d63384;
+}
+
+#finalizar-compra,
+#vaciar-carrito {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    margin-top: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+#finalizar-compra {
+    background-color: #d63384;
+    color: #fff;
+}
+
+#finalizar-compra:hover {
+    background-color: #9b145b;
+}
+
+#vaciar-carrito {
+    background-color: #f8e1f4;
+    color: #d63384;
+}
+
+#vaciar-carrito:hover {
+    background-color: #d63384;
+    color: #fff;
+}
+
+/* Botón flotante del carrito */
+#abrir-carrito {
+    position: fixed;
+    top: 25px;
+    right: 25px;
+    background-color: #d63384;
+    color: #fff;
+    border: none;
+    padding: 14px 16px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 22px;
+    z-index: 1001;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+#abrir-carrito:hover {
+    background-color: #9b145b;
+    transform: scale(1.1);
+}
+
+/* Animación suave */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
